@@ -11,56 +11,56 @@ app.get('/', (req, res) => {
 
 // ITEMS
 app.get('/items', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Get Items!')
 })
 
 app.post('/items', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Post Items!')
 })
 
 app.put('/items', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Update Items!')
 })
 
 app.delete('/items', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Delete Items!')
 })
 
 
 // CARTS
 app.get('/carts', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Get Carts!')
 })
 
 app.post('/carts', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Create Cart!')
 })
 
 app.put('/carts', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Update Cart!')
 })
 
 app.delete('/carts', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Delete Cart!')
 })
 
 
 // ORDERS
 app.get('/orders', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Get Orders!')
 })
 
 app.post('/orders', async (req, res) => {
-  res.send('Hello World!')
+  res.send('Create Order!')
 })
 
-app.put('/orders', async (req, res) => {
-  res.send('Hello World!')
-})
+// app.put('/orders', async (req, res) => {
+//   res.send('Update Order!')
+// })
 
-app.delete('/orders', async (req, res) => {
-  res.send('Hello World!')
-})
+// app.delete('/orders', async (req, res) => {
+//   res.send('Delete Order!')
+// })
 
 
 

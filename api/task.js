@@ -165,7 +165,6 @@ export const createOrder = async () => {
       cart_id
     }
   })
-
   const response = await docClient.send(command)
   return response;
 };
