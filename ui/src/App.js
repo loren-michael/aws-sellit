@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import NavBar from './components/NavBar';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
@@ -26,6 +27,7 @@ function App() {
   return (
     <BrowserRouter>
       <div>
+        <NavBar />
         <Routes>
           <Route exact path="/" element={ <Home /> } />
           <Route path="/signup" element ={ <SignUp /> } />
