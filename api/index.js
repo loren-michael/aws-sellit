@@ -1,8 +1,18 @@
-const express = require('express');
+import express from 'express';
+import { fetchItems, createItem, updateItem, DeleteItem } from './item';
+import { fetchCarts, createCart, updateCart, deleteCart } from './cart';
+import { fetchOrders, createOrder } from './order';
+import serverless from 'serverless-http';
+import cors from 'cors';
+
 const app = express();
 const port = 3001;
 
 app.use(express.json())
+
+if (process.env.DEVELOPMENT) {
+  app.use(cors())
+}
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -62,9 +72,10 @@ app.post('/orders', async (req, res) => {
 //   res.send('Delete Order!')
 // })
 
+if (process.env.DEVELOPMENT) {
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
+}
 
-
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+export const handler = serverless(app)
