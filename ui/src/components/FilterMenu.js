@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const FilterMenu = () => {
+const FilterMenu = () => {
   return (
     <div>FilterMenu</div>
   )
 }
+
+export default FilterMenu

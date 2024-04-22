@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const ItemCard = () => {
+const ItemCard = () => {
   return (
     <div>ItemCard</div>
   )
 }
+
+export default ItemCard
