@@ -13,8 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Home', 'See All'];
+const settings = ['Profile', 'Cart', 'Orders', 'Logout'];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null)
