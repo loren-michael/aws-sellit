@@ -1,11 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react'
-import '../index.css'
+import React, { useRef, useState, useEffect } from 'react';
+import '../index.css';
 import { useNavigate, NavLink } from 'react-router-dom';
-import { faCheck, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCheck, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
 import { createSession } from '../actions/sessions';
-import logo from '../images/sellit-4.png'
+import logo from '../images/sellit-4.png';
 
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
@@ -41,7 +41,7 @@ const SignUp = () => {
   // test username against username regex whenever username is changed
   useEffect(() => {
     setValidName(USER_REGEX.test(username))
-  }, [username])
+  }, [username]);
 
   // test password against password regex AND verify matching password
   useEffect(() => {
@@ -52,11 +52,11 @@ const SignUp = () => {
   // remove errors when user is making changes to reverify results
   useEffect(() => {
     setErrMsg('');
-  }, [username, password, matchPwd])
+  }, [username, password, matchPwd]);
 
   useEffect(() => {
     setValidEmail(EMAIL_REGEX.test(emailAddress))
-  }, [emailAddress])
+  }, [emailAddress]);
 
 
   const handleSubmit = (e) => {
@@ -92,7 +92,7 @@ const SignUp = () => {
         }
       })
     }
-  }
+  };
 
   return (
     <div>
@@ -105,10 +105,10 @@ const SignUp = () => {
       <form onSubmit={ handleSubmit } >
         <label htmlFor='username'>Username: 
           <span className={validName ? "valid" : "hide"}>
-            <FontAwesomeIcon icon={faCheck}/>
+            {/* <FontAwesomeIcon icon={faCheck}/> */}
           </span>
           <span className={validName || !username ? "hide" : "invalid"}>
-            <FontAwesomeIcon icon={faTimes}/>
+            {/* <FontAwesomeIcon icon={faTimes}/> */}
           </span>
         </label>
         <input 
@@ -125,7 +125,7 @@ const SignUp = () => {
           onBlur={() => setUserFocus(false)}
         />
         <p id="uidnote" className={userFocus && username && !validName ? "instructions" : "offscreen"}>
-          <FontAwesomeIcon icon={faInfoCircle} />
+          {/* <FontAwesomeIcon icon={faInfoCircle} /> */}
           4 to 24 characters.<br></br>
           Must begin with a letter.<br></br>
           Letters, numbers, underscores, hyphens allowed.
@@ -134,10 +134,10 @@ const SignUp = () => {
         <label htmlFor='emailaddress'>
           Email Address: 
           <span className={validEmail ? "valid" : "hide"}>
-            <FontAwesomeIcon icon={faCheck} />
+            {/* <FontAwesomeIcon icon={faCheck} /> */}
           </span>
           <span className={validEmail || !emailAddress ? "hide" : "invalid"}>
-            <FontAwesomeIcon icon={faTimes} />
+            {/* <FontAwesomeIcon icon={faTimes} /> */}
           </span>
         </label>
         <input
@@ -179,10 +179,10 @@ const SignUp = () => {
         <label htmlFor='password'>
           Password: 
           <span className={validPwd ? "valid" : "hide"}>
-            <FontAwesomeIcon icon={faCheck} />
+            {/* <FontAwesomeIcon icon={faCheck} /> */}
           </span>
           <span className={validPwd || !password ? "hide" : "invalid"}>
-            <FontAwesomeIcon icon={faTimes}/>
+            {/* <FontAwesomeIcon icon={faTimes}/> */}
           </span>
         </label>
         <input
@@ -198,7 +198,7 @@ const SignUp = () => {
           onBlur={() => setPwdFocus(false)}
         />
         <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
-          <FontAwesomeIcon icon={faInfoCircle} />
+          {/* <FontAwesomeIcon icon={faInfoCircle} /> */}
           8 to 24 characters.
           Must include uppercase and lowercase letters, a number and a special character.<br></br>
           Allowed special characters: 
@@ -212,10 +212,10 @@ const SignUp = () => {
         <label htmlFor='confirmPwd'>
           Confirm Password: 
           <span className={validMatch && matchPwd ? "valid" : "hide"}>
-            <FontAwesomeIcon icon={faCheck}/>
+            {/* <FontAwesomeIcon icon={faCheck}/> */}
           </span>
           <span className={validMatch || !matchPwd ? "hide" : "invalid"}>
-            <FontAwesomeIcon icon={faTimes}/>
+            {/* <FontAwesomeIcon icon={faTimes}/> */}
           </span>
         </label>
         <input
@@ -230,7 +230,7 @@ const SignUp = () => {
           onBlur={() => setMatchFocus(false)}
           />
           <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-            <FontAwesomeIcon icon={faInfoCircle}/>
+            {/* <FontAwesomeIcon icon={faInfoCircle}/> */}
             Must match the password input field.
           </p>
           <br></br>
@@ -242,6 +242,6 @@ const SignUp = () => {
       </section>
     </div>
   )
-}
+};
 
-export default SignUp
+export default SignUp;

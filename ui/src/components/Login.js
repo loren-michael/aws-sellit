@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { createSession } from '../actions/sessions';
-import logo from '../images/sellit-4.png'
+import logo from '../images/sellit-4.png';
 
 
 const Login = () => {
@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([])
+  const [errors, setErrors] = useState([]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ const Login = () => {
         r.json().then(data => setErrors(data.errors))
       }
     })
-  }
+  };
 
   return (
     <div>
@@ -73,6 +73,6 @@ const Login = () => {
       </section>
     </div>
   )
-}
+};
 
-export default Login
+export default Login;

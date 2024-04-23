@@ -1,32 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import NavBar from './NavBar'
-import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { loadSession } from '../actions/sessions'
-import { deleteItem } from '../actions/items'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { loadSession } from '../actions/sessions';
+import { deleteItem } from '../actions/items';
 
 
 const Profile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loggedIn, currentUser } = useSelector(store => store.sessions);
-  const items = useSelector(store => store.items.items)
+  const items = useSelector(store => store.items.items);
 
   useEffect(() => {
     loadSession()
-  },[])
+  },[]);
 
   function handleFormNav () {
     navigate('/new_item')
-  }
+  };
 
   function handleDeleteListing (e) {
     dispatch(deleteItem(e.target.id))
-  }
+  };
 
   return (
     <div>
-      <NavBar />
       { !loggedIn ? 
         <div class="max-w-2/4 p-2 font-sans text-2xl font-semibold text-center">Please log in to see your profile.</div>
         
@@ -64,6 +62,6 @@ const Profile = () => {
       }
     </div>
   )
-}
+};
 
-export default Profile
+export default Profile;

@@ -1,18 +1,16 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faUser } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
 const ItemCard = ({ item, setDetailedItem }) => {
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   function handleViewItem() {
     setDetailedItem(item)
     navigate(`/items/${item.id}`)
-  }
-
+  };
 
   return (
       <a class="card" href={`/items/${item.id}`} style={{height: "300px", margin: "10px"}} onClick={handleViewItem} >
@@ -30,7 +28,8 @@ const ItemCard = ({ item, setDetailedItem }) => {
         </div>
         <div>
           <div class="absolute bottom-20 left-5 font-sans text-lg" >
-            <FontAwesomeIcon icon={faUser} style={{color: "#8c8c8c",}} /> {item.user.username}
+            {/* <FontAwesomeIcon icon={faUser} style={{color: "#8c8c8c",}} /> */}
+            {item.user.username}
           </div>
           <span class="absolute bottom-20 right-5 font-sans text-lg">
             ${item.price}
@@ -39,6 +38,6 @@ const ItemCard = ({ item, setDetailedItem }) => {
         <button class="ui button" onClick={handleViewItem}>View Item</button>
       </a>
   )
-}
+};
 
-export default ItemCard
+export default ItemCard;

@@ -11,27 +11,27 @@ const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const carts = useSelector(store => store.carts);
-  const activeFirst = carts.carts.sort((a, b) => b.active - a.active)
+  const activeFirst = carts.carts.sort((a, b) => b.active - a.active);
 
   useEffect(() => {
     dispatch(loadCarts())
-  }, [])
+  }, []);
 
   function handleRemoveItem (e) {
     dispatch(deleteCartItem(e.target.id))
-  }
+  };
 
   function handleEmptyCart (e) {
     dispatch(emptyCart(e.target.id))
-  }
+  };
 
   function handleCheckOut (e) {
     navigate(`/checkout/${e.target.id}`)
-  }
+  };
 
   function handleDeleteCart(e) {
     dispatch(deleteCart(e.target.id))
-  }
+  };
 
 
   return (
@@ -99,6 +99,6 @@ const Cart = () => {
       </div>
     </div>
   )
-}
+};
 
-export default Cart
+export default Cart;

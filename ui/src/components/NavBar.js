@@ -24,11 +24,11 @@ const NavBar = () => {
     })
     .then(dispatch(deleteSession()))
     .then(navigate('/'))
-  }
+  };
 
   function handleCart() {
     navigate("/cart")
-  }
+  };
 
   return (
     <div class="h-40">
@@ -69,6 +69,6 @@ const NavBar = () => {
       </div>
     </div>
   )
-}
+};
 
-export default NavBar
+export default NavBar;

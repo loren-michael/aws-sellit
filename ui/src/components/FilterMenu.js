@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 
 const FilterMenu = ({ setFilterCategory }) => {
-
 
   return (
     <div class="flex flex-wrap justify-center">
@@ -17,6 +16,6 @@ const FilterMenu = ({ setFilterCategory }) => {
         <button class="font-sans font-semibold" onClick={() => setFilterCategory("Accessories")} >Accessories</button>
     </div>
     )
-}
+};
 
-export default FilterMenu
+export default FilterMenu;

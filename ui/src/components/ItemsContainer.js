@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import ItemCard from './ItemCard'
+import ItemCard from './ItemCard';
 import FilterMenu from './FilterMenu';
 
 const ItemsContainer = () => {
-  const items = useSelector(store => store.items)
-  const [filterCategory, setFilterCategory] = useState("All")
-  const [displayItems, setDisplayItems] = useState([])
+  const items = useSelector(store => store.items);
+  const [filterCategory, setFilterCategory] = useState("All");
+  const [displayItems, setDisplayItems] = useState([]);
 
   useEffect(() => {
     setDisplayItems(items.items)
-  }, [items])
+  }, [items]);
 
   useEffect(() => {
     if (filterCategory === "All") {
@@ -20,7 +20,7 @@ const ItemsContainer = () => {
       const filterItems = items.items.filter(item => item.category === filterCategory)
       setDisplayItems(filterItems)
     }
-  }, [filterCategory])
+  }, [filterCategory]);
 
 
   return (
@@ -39,6 +39,6 @@ const ItemsContainer = () => {
       </div>
     </div>
   )
-}
+};
 
-export default ItemsContainer
+export default ItemsContainer;

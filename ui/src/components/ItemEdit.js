@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { updateItem } from '../actions/items';
 import { useDispatch, useSelector } from 'react-redux';
-import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
 
 const ItemEdit = () => {
-  const displayItem = useSelector(store => store.items.displayItem)
+  const displayItem = useSelector(store => store.items.displayItem);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
@@ -19,7 +18,7 @@ const ItemEdit = () => {
     make: displayItem.make,
     model: displayItem.model,
     price: displayItem.price
-  })
+  });
 
   function resetForm() {
     setItem({
@@ -33,7 +32,7 @@ const ItemEdit = () => {
       model: "",
       price: 0.00
     })
-  }
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -58,11 +57,10 @@ const ItemEdit = () => {
         r.json().then(data => setErrors(data.errors))
       }
     })
-  }
+  };
 
   return (
     <div>
-      <NavBar />
       {errors.map(err => {
         return (
           <p className={errors ? "errmsg" : "offscreen"} aria-live="assertive">{err}</p>
@@ -150,6 +148,6 @@ const ItemEdit = () => {
       </form>
     </div>
   )
-}
+};
 
-export default ItemEdit
+export default ItemEdit;

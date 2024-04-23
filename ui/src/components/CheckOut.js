@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import NavBar from './NavBar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { deactivateCart } from '../actions/carts';
@@ -21,18 +20,19 @@ const CheckOut = () => {
     const id = e.target.id
     dispatch(deactivateCart(id))
     navigate('/cart')
-  }
+  };
 
 
   return (
     <div>
-      <NavBar />
       <div>
         <h3 class="pl-20">Complete your order</h3>
         {errors ? <p>{errors.map(err => <p key={err} className="errMsg" aria-live="assertive">{err}</p>)}</p> : null}
           <div key={checkOutCart.id} class="p-3 mb-3  w-9/12 m-auto bg-slate-200 rounded border-2 border-black columns-auto">
             <div class="w-15">
-              <div class="m-8"><FontAwesomeIcon icon={faCartShopping} size="xl" style={{color: "#00ff00",}} /></div> 
+              <div class="m-8">
+                {/* <FontAwesomeIcon icon={faCartShopping} size="xl" style={{color: "#00ff00",}} /> */}
+              </div> 
               </div>
               <div class="w-fit font-sans">
                 {checkOutCart.items.map(item => {
@@ -64,6 +64,6 @@ const CheckOut = () => {
       </div>
     </div>
   )
-}
+};
 
-export default CheckOut
+export default CheckOut;

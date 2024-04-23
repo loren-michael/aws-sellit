@@ -11,31 +11,31 @@ const ItemDetails = () => {
   const navigate = useNavigate();
   const params = useParams();
   const itemId = params.id;
-  const displayItem = useSelector(store => store.items.displayItem)
-  const currentUser = useSelector(store => store.sessions.currentUser)
-  const [loading, setLoading] = useState(true)
-  const loggedIn = useSelector(store => store.sessions.loggedIn)
+  const displayItem = useSelector(store => store.items.displayItem);
+  const currentUser = useSelector(store => store.sessions.currentUser);
+  const [loading, setLoading] = useState(true);
+  const loggedIn = useSelector(store => store.sessions.loggedIn);
 
   useEffect(() => {
     dispatch(loadItem(itemId))
     if (displayItem) {
       setLoading(false)
     }
-  }, [])
+  }, []);
 
   function handleAddCart() {
     dispatch(addItemToCart(displayItem.id))
     navigate("/cart")
-  }
+  };
 
   function handleDeleteListing (e) {
     dispatch(deleteItem(e.target.id))
     navigate("/profile")
-  }
+  };
 
   function handleEditListing() {
     navigate("/edit")
-  }
+  };
 
 
   return (
@@ -88,6 +88,6 @@ const ItemDetails = () => {
       }
     </div>
   )
-}
+};
 
-export default ItemDetails
+export default ItemDetails;
