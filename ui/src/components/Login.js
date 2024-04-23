@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { createSession } from '../actions/sessions';
-import logo from '../images/sellit-4.png';
+// import logo from '../images/sellit-4.png';
 
 
 const Login = () => {
@@ -37,7 +37,7 @@ const Login = () => {
 
   return (
     <div>
-      <span><a href="/"><img src={logo} alt="Sell It! Home" class="h-36"></img></a></span>
+      {/* <span><a href="/"><img src={logo} alt="Sell It! Home" class="h-36"></img></a></span> */}
       <section>
         <h3>Log In</h3>
         {errors ? <p>{errors.map(err => <p key={err} className="errMsg" aria-live="assertive">{err}</p>)}</p> : null}

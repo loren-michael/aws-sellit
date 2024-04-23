@@ -5,7 +5,7 @@ import { useNavigate, NavLink } from 'react-router-dom';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
 import { createSession } from '../actions/sessions';
-import logo from '../images/sellit-4.png';
+// import logo from '../images/sellit-4.png';
 
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
@@ -96,7 +96,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <span><a href="/"><img src={logo} alt="Sell It! Home" class="h-36"></img></a></span>
+      {/* <span><a href="/"><img src={logo} alt="Sell It! Home" class="h-36"></img></a></span> */}
       <section>
       <h3>Sign Up</h3>
       {/* If errMsg exists, we will display it, otherwise it just displays offscreen but is still available to screen readers rather than display=none removing from the document */}
