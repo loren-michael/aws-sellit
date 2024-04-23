@@ -6,7 +6,7 @@ import Logout from '@mui/icons-material/Logout';
 import Headphones from '@mui/icons-material/Headphones';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faCircleUser, faArrowRightFromBracket, faCartShopping } from '@fortawesome/free-solid-svg-icons';
-// import logo from '../images/sellit-4.png'
+import logo from '../images/sellit-4.png'
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteSession } from '../actions/sessions';
 import { Typography } from '@mui/material';
@@ -40,7 +40,7 @@ const NavBar = () => {
         <span>
           <Typography>Sell It!</Typography>
         </span>
-        {/* <a href="/"><img href="/" class="h-36 float-left" src={logo} alt="Sell It! Home" /></a> */}
+        <a href="/"><img href="/" class="h-36 float-left" src={logo} alt="Sell It! Home" /></a>
 
         {loggedIn ? 
           <span class="float-right" className="loginLinks">
