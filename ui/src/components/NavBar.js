@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faArrowRightFromBracket, faBars, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUser, faArrowRightFromBracket, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/sellit-4.png'
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteSession } from '../actions/sessions';
