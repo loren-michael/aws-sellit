@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import ItemsContainer from './ItemsContainer';
 
 const Home = () => {
+
   return (
-    <div>Home</div>
+    <div>
+      <div>
+        <ItemsContainer />
+      </div>
+    </div>
   )
 }
 
