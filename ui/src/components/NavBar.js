@@ -1,10 +1,14 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import ShoppingCart from '@mui/icons-material/ShoppingCart';
+import Logout from '@mui/icons-material/Logout';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faCircleUser, faArrowRightFromBracket, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/sellit-4.png'
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteSession } from '../actions/sessions';
+
 
 
 const NavBar = () => {
@@ -33,9 +37,18 @@ const NavBar = () => {
         {loggedIn ? 
           <span class="float-right" className="loginLinks">
             <span class="font-sans font-medium text-lg pr-5 ">Welcome, {currentUser.username}! </span>
-            {/* <NavLink to="/profile" href="/profile" class="font-sans text-lg text-black"><FontAwesomeIcon onClick={() => navigate("/profile")} icon={faCircleUser} size="xl" style={{color: "#000000", padding: "10px"}} /></NavLink> */}
-            {/* <NavLink to="/cart" href="/cart" class="font-sans text-lg text-black"><FontAwesomeIcon onClick={() => handleCart()} icon={faCartShopping} size="xl" style={{color: "#000000", padding: "10px"}} /></NavLink> */}
-            {/* <NavLink to="/" href="/" class="font-sans text-lg text-black"><FontAwesomeIcon onClick={() => handleLogout()} icon={faArrowRightFromBracket} size="xl" style={{color: "#000000", padding: "10px"}} /></NavLink> */}
+            <NavLink to="/profile" href="/profile" class="font-sans text-lg text-black">
+              <AccountCircle />
+              {/* <FontAwesomeIcon onClick={() => navigate("/profile")} icon={faCircleUser} size="xl" style={{color: "#000000", padding: "10px"}} /> */}
+            </NavLink>
+            <NavLink to="/cart" href="/cart" class="font-sans text-lg text-black">
+              <ShoppingCart />
+              {/* <FontAwesomeIcon onClick={() => handleCart()} icon={faCartShopping} size="xl" style={{color: "#000000", padding: "10px"}} /> */}
+            </NavLink>
+            <NavLink to="/" href="/" class="font-sans text-lg text-black">
+              <Logout />
+              {/* <FontAwesomeIcon onClick={() => handleLogout()} icon={faArrowRightFromBracket} size="xl" style={{color: "#000000", padding: "10px"}} /> */}
+            </NavLink>
             {/* <FontAwesomeIcon icon={faBars} size="xl" style={{color: "#000000", padding: "10px"}} /> */}
           </span>
         :
