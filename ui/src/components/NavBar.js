@@ -34,8 +34,12 @@ const NavBar = () => {
     <div class="h-40">
 
       <div class="w-full">
-        <Headphones />
-        <Typography>Sell It!</Typography>
+        <span>
+          <Headphones size="large"/>
+        </span>
+        <span>
+          <Typography>Sell It!</Typography>
+        </span>
         {/* <a href="/"><img href="/" class="h-36 float-left" src={logo} alt="Sell It! Home" /></a> */}
 
         {loggedIn ? 
