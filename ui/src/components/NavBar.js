@@ -3,11 +3,13 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import Logout from '@mui/icons-material/Logout';
+import Headphones from '@mui/icons-material/Headphones';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faCircleUser, faArrowRightFromBracket, faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import logo from '../images/sellit-4.png'
+// import logo from '../images/sellit-4.png'
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteSession } from '../actions/sessions';
+import { Typography } from '@mui/material';
 
 
 
@@ -32,7 +34,9 @@ const NavBar = () => {
     <div class="h-40">
 
       <div class="w-full">
-        <a href="/"><img href="/" class="h-36 float-left" src={logo} alt="Sell It! Home" /></a>
+        <Headphones />
+        <Typography>Sell It!</Typography>
+        {/* <a href="/"><img href="/" class="h-36 float-left" src={logo} alt="Sell It! Home" /></a> */}
 
         {loggedIn ? 
           <span class="float-right" className="loginLinks">
