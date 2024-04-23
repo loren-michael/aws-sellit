@@ -3,8 +3,8 @@ import NavBar from './NavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteCart, emptyCart, loadCarts } from '../actions/carts';
 import { deleteCartItem } from '../actions/cartItems';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCartShopping, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
@@ -43,11 +43,11 @@ const Cart = () => {
           return (
             <div key={cart.id} class="p-3 mb-3  w-9/12 m-auto bg-slate-200 rounded border-2 border-black columns-auto">
               <div class="w-15">
-                  {cart.active ? 
+                  {/* {cart.active ? 
                     <div class="m-8"><FontAwesomeIcon icon={faCartShopping} size="xl" style={{color: "#00ff00",}} /></div> 
                   : 
                     <div class="m-8"><FontAwesomeIcon icon={faCircleCheck} size="xl" style={{color: "#000000",}} /></div>
-                  }
+                  } */}
               </div>
               <div class="w-fit font-sans">
                 {cart.items.map(item => {
