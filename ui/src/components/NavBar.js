@@ -54,7 +54,7 @@ const NavBar = () => {
             {/* <FontAwesomeIcon icon={faBars} size="xl" style={{color: "#000000", padding: "10px"}} /> */}
           </span>
         :
-        <span class="float-right" className="loginLinks">
+        <span class="float-right" className="loginLinks text-black">
             <NavLink to="/login">Log In</NavLink>  or  <NavLink to="/signup"> Sign Up </NavLink>
             {/* <FontAwesomeIcon icon={faCircleUser} size="xl" style={{color: "#000000",}} /> */}
           </span>
