@@ -5,7 +5,7 @@ const FilterMenu = ({ setFilterCategory }) => {
 
   return (
     <div class="flex flex-wrap justify-center">
-        <button class="font-sans font-semibold" onClick={() => setFilterCategory("All")} >View All</button>
+        <button class="font-sans font-semibold text-black" onClick={() => setFilterCategory("All")} >View All</button>
         <button class="font-sans font-semibold" onClick={() => setFilterCategory("Guitars")} >Guitars</button>
         <button class="font-sans font-semibold" onClick={() => setFilterCategory("Keyboards & Synth")} >Keyboards & Synth</button>
         <button class="font-sans font-semibold" onClick={() => setFilterCategory("Drums & Percussion")} >Drums & Percussion</button>
