@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import NavBar from './components/NavBar';
@@ -14,11 +14,12 @@ import CheckOut from './components/CheckOut';
 import ItemEdit from './components/ItemEdit';
 import { loadItems } from './actions/items';
 import { loadSession } from './actions/sessions';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 function App() {
   const dispatch = useDispatch();
+  // const [items, setItems] = useState();
 
   useEffect(() => {
     dispatch(loadItems())

@@ -1,5 +1,5 @@
 import express from 'express';
-import { fetchItems, createItem, updateItem, DeleteItem } from './item';
+import { fetchItems, createItem, updateItem, deleteItem } from './item';
 import { fetchCarts, createCart, updateCart, deleteCart } from './cart';
 import { fetchOrders, createOrder } from './order';
 import serverless from 'serverless-http';
@@ -11,12 +11,27 @@ const port = 3001;
 app.use(express.json())
 
 if (process.env.DEVELOPMENT) {
-  app.use(cors())
+  app.use(cors());
 }
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
+// USERS
+
+app.get('/login', async (req, res) => {
+  try {
+    const user = await fetchUser(username, password_digest);
+    res.send({
+      "username": username,
+      "password_digest": password_digest
+    })
+  } catch (err) {
+
+  }
+});
+
 
 
 // ITEMS
@@ -73,7 +88,7 @@ app.get('/carts', async (req, res) => {
 app.post('/carts', async (req, res) => {
   try {
     const cart = req.body;
-    const response = await createItem(cart);
+    const response = await createCart(cart);
     res.send(response);
   } catch (err) {
     res.status(400).send(`Error creating cart: ${err}`)

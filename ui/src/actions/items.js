@@ -1,3 +1,6 @@
+import { API_URL } from "../utils";
+// import axios from "axios";
+
 const headers = {
   "Content-Type": "application/json",
   "Accept": "application/json"
@@ -12,7 +15,7 @@ export const addItem = item => {
 
 export const deleteItem = id => {
   return (dispatch) => {
-    fetch("/items/" + id, {
+    fetch(API_URL + "/items/" + id, {
       method: "DELETE",
       headers: headers,
       body: JSON.stringify(id)
@@ -24,7 +27,7 @@ export const deleteItem = id => {
 
 export const loadItem = id => {
   return (dispatch) => {
-    fetch('/items/' + id)
+    fetch(API_URL + '/items/' + id)
     .then(r => r.json())
     .then(item => dispatch({type: "LOAD_ITEM", payload: item}))
   }
@@ -32,7 +35,7 @@ export const loadItem = id => {
 
 export const loadItems = () => {
   return (dispatch) => {
-    fetch("/items")
+    fetch(API_URL + `/items`)
     .then(r => r.json())
     .then(data => dispatch({type: "LOAD_ITEMS", payload: data}))
   }
